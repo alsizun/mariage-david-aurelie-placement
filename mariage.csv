@@ -1,0 +1,85 @@
+ACTIVE;TID;CID;NOM;TYPE;INFO;TABLE;L;H;X;Y;Z;A;TEX;ROT
+1;01;0100;;tableronde;;ados;195;195;930;500;0;1;img/tex-tab-ronde.png;0
+1;02;0200;;table;;famille;560;140;1050;790;0;1;img/tex-tab-longue.png;0
+1;03;0300;;table;;amis;560;140;55;765;0;1;img/tex-tab-longue.png;0
+1;04;0400;;table;;tyYann;405;140;145;495;0;1;img/tex-tab-moyenne.png;0
+1;05;0500;;table;;cousins;405;140;1205;488;0;1;img/tex-tab-moyenne.png;0
+1;06;0600;;tableronde;;honneur;195;195;745;715;0;1;img/tex-tab-ronde.png;0
+1;01;0101;Alexy;chaise;;ados;64;64;953;326;0;1;img/chair.png;0
+1;01;0102;Margot;chaise;;ados;64;64;154;340;0;1;img/chair.png;0
+1;01;0103;Morgan;chaise;;ados;64;64;580;420;0;1;img/chair.png;75
+1;01;0104;Coline;chaise;;ados;64;64;725;708;0;1;img/chair.png;285
+1;01;0105;Sylvain;chaise;;ados;64;64;396;510;0;1;img/chair.png;0
+1;01;0106;Ewen;chaise;;ados;64;64;206;503;0;1;img/chair.png;0
+1;01;0107;Maxence;chaise;;ados;64;64;1175;503;0;1;img/chair.png;0
+1;01;0108;Matis;chaise;;ados;64;64;657;287;0;1;img/chair.png;135
+1;01;0109;Enola;chaise;;ados;64;64;220;342;0;1;img/chair.png;0
+1;02;0201;Catherine;chaise;;famille;64;64;752;272;0;1;img/chair.png;210
+1;02;0202;Jean G;chaise;;famille;64;64;335;754;0;1;img/chair.png;0
+1;02;0203;Jacqueline;chaise;;famille;64;64;247;589;0;1;img/chair.png;0
+1;02;0204;Marie M;chaise;;famille;64;64;274;756;0;1;img/chair.png;0
+1;02;0205;Paul;chaise;;famille;64;64;812;427;0;1;img/chair.png;270
+1;02;0206;Florence;chaise;;famille;64;64;936;586;0;1;img/chair.png;0
+1;02;0207;Jean Yves;chaise;;famille;64;64;301;585;0;1;img/chair.png;0
+1;02;0208;Denis;chaise;;famille;64;64;138;500;0;1;img/chair.png;0
+1;02;0209;Jean B;chaise;;famille;64;64;637;487;0;1;img/chair.png;15
+1;02;0210;Gérard;chaise;;famille;64;64;736;506;0;1;img/chair.png;0
+1;02;0211;Marie B;chaise;;famille;64;64;318;339;0;1;img/chair.png;0
+1;02;0212;Alain;chaise;;famille;64;64;381;758;0;1;img/chair.png;0
+1;02;0213;Eliane;chaise;;famille;64;64;896;751;0;1;img/chair.png;0
+1;02;0214;Jeanne C;chaise;;famille;64;64;1151;757;0;1;img/chair.png;0
+1;02;0215;Michel;chaise;;famille;64;64;1591;415;0;1;img/chair.png;0
+1;02;0216;Bernadette;chaise;;famille;64;64;434;384;0;1;img/chair.png;0
+1;02;0217;Hélène;chaise;;famille;64;64;429;455;0;1;img/chair.png;0
+1;02;0218;Genevieve;chaise;;famille;64;64;601;318;0;1;img/chair.png;135
+1;03;0301;Guillaume C;chaise;;amis;64;64;485;702;0;1;img/chair.png;0
+1;03;0302;Sabine;chaise;;amis;64;64;247;505;0;1;img/chair.png;0
+1;03;0303;David R;chaise;;amis;64;64;699;776;0;1;img/chair.png;0
+1;03;0304;Agnès;chaise;;amis;64;64;112;344;0;1;img/chair.png;0
+1;03;0305;Loïc;chaise;;amis;64;64;804;711;0;1;img/chair.png;0
+1;03;0306;Daniel;chaise;;amis;64;64;811;645;0;1;img/chair.png;0
+1;03;0307;Nadine;chaise;;amis;64;64;860;751;0;1;img/chair.png;0
+1;03;0308;Mikaël;chaise;;amis;64;64;910;438;0;1;img/chair.png;0
+1;03;0309;Alban;chaise;;amis;64;64;359;587;0;1;img/chair.png;0
+1;03;0310;Lydie;chaise;;amis;64;64;1050;591;0;1;img/chair.png;0
+1;03;0311;David B;chaise;;amis;64;64;297;505;0;1;img/chair.png;0
+1;03;0312;Stéphanie;chaise;;amis;64;64;430;760;0;1;img/chair.png;0
+1;03;0313;Eric L.C.;chaise;;amis;64;64;795;478;0;1;img/chair.png;0
+1;03;0314;Michèle;chaise;;amis;64;64;1093;756;0;1;img/chair.png;0
+1;03;0315;Yveline;chaise;;amis;64;64;1200;590;0;1;img/chair.png;0
+1;03;0316;Noël;chaise;;amis;64;64;1044;755;0;1;img/chair.png;0
+1;03;0317;Sandrine;chaise;;amis;64;64;419;587;0;1;img/chair.png;0
+1;03;0318;Gaëlle;chaise;;amis;64;64;195;567;0;1;img/chair.png;0
+1;04;0401;Camille;chaise;;tyYann;64;64;1221;507;0;1;img/chair.png;0
+1;04;0402;Cécile;chaise;;tyYann;64;64;942;749;0;1;img/chair.png;0
+1;04;0403;Manon;chaise;;tyYann;64;64;692;594;0;1;img/chair.png;225
+1;04;0404;Pierre;chaise;;tyYann;64;64;724;653;0;1;img/chair.png;255
+1;04;0405;Jeanne;chaise;;tyYann;64;64;1514;413;0;1;img/chair.png;0
+1;04;0406;Gauthier;chaise;;tyYann;64;64;534;616;0;1;img/chair.png;105
+1;04;0407;Julie;chaise;;tyYann;64;64;231;753;0;1;img/chair.png;0
+1;04;0408;Danielle;chaise;;tyYann;64;64;488;642;0;1;img/chair.png;0
+1;04;0409;Anthony;chaise;;tyYann;64;64;138;589;0;1;img/chair.png;0
+1;04;0410;Klervie;chaise;;tyYann;64;64;541;724;0;1;img/chair.png;15
+1;04;0411;Philippe;chaise;;tyYann;64;64;997;748;0;1;img/chair.png;0
+1;04;0412;Loreleï;chaise;;tyYann;64;64;169;752;0;1;img/chair.png;0
+1;04;0413;Laurent;chaise;;tyYann;64;64;868;594;0;1;img/chair.png;0
+1;05;0501;Guillaume B;chaise;;cousins;64;64;1130;501;0;1;img/chair.png;0
+1;05;0502;Christelle;chaise;;cousins;64;64;610;580;0;1;img/chair.png;165
+1;05;0503;Hans;chaise;;cousins;64;64;1390;414;0;1;img/chair.png;0
+1;05;0504;Marion;chaise;;cousins;64;64;1018;323;0;1;img/chair.png;0
+1;05;0505;Benjamin;chaise;;cousins;64;64;916;385;0;1;img/chair.png;0
+1;05;0506;Céline;chaise;;cousins;64;64;1012;505;0;1;img/chair.png;0
+1;05;0507;Aurélie S;chaise;;cousins;64;64;269;328;0;1;img/chair.png;0
+1;05;0508;Laurent;chaise;;cousins;64;64;1205;758;0;1;img/chair.png;0
+1;05;0509;Laetitia;chaise;;cousins;64;64;1128;587;0;1;img/chair.png;0
+1;05;0510;Etienne;chaise;;cousins;64;64;119;752;0;1;img/chair.png;0
+1;05;0511;Laura;chaise;;cousins;64;64;946;498;0;1;img/chair.png;0
+1;05;0512;Alexandre;chaise;;cousins;64;64;87;589;0;1;img/chair.png;0
+1;06;0601;David;chaise;;honneur;64;64;642;789;0;1;img/chair.png;0
+1;06;0602;Aurélie;chaise;;honneur;64;64;983;578;0;1;img/chair.png;0
+1;06;0603;Julien;chaise;;honneur;64;64;592;777;0;1;img/chair.png;0
+1;06;0604;Adeline;chaise;;honneur;64;64;368;332;0;1;img/chair.png;0
+1;06;0605;Anthony;chaise;;honneur;64;64;1077;328;0;1;img/chair.png;0
+1;06;0606;Marie G;chaise;;honneur;64;64;777;334;0;1;img/chair.png;225
+1;06;0607;Eric;chaise;;honneur;64;64;344;509;0;1;img/chair.png;0
+1;06;0608;Camille;chaise;;honneur;64;64;74;424;0;1;img/chair.png;0

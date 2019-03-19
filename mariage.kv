@@ -1,0 +1,117 @@
+# coding: utf-8
+#:kivy 1.0
+#:import kivy kivy
+#:import win kivy.core.window
+
+
+# BACKGOUND ==================================================================
+
+
+<Background>:
+    canvas:
+        Color:
+            rgb: 0.7, 0.7, 0.7
+        Rectangle:
+            source: 'bkg/salle.png'
+            # size: self.size
+            size: 1720, 571
+            pos: (0, 400)
+    Image:
+        # size_hint: None, None
+        size: 64, 64
+        source: 'heartlogo.png'
+    Label:
+        id: title
+        height: 36
+        text_size: 700, None
+        color: (1, 1, 1, .8)
+        text: 'Mariage David & Aurelie  ->  trouvez votre place'
+        pos: (350, 980)
+        font_size: '25sp'
+    # Label:
+    #     id: SelectedGuest
+    #     height: 36
+    #     text_size: self.width, None
+    #     color: (1, 1, 1, .8)
+    #     text: '...'
+    #     pos: (400, 60)
+
+
+
+
+# FURNITURE ==================================================================
+
+
+<RoundTable>:
+    size: (min(self.width,self.height),min(self.width,self.height)) # force circle
+    canvas:
+        Color:
+            rgba: ((1,1,1,1) if self.state == "normal" else (.5,.5,.5,1))
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+ 
+
+<TableButton>:
+    text: root.tablename
+    # Image:
+    #     id: image
+    #     source: root.source
+
+
+<ChairELT>:
+    on_size: self.center = win.Window.center
+    # size: image.size
+    size_hint: None, None
+    rotation: root.rot
+
+    Image:
+        id: image
+        source: root.source
+        # create initial image to be 64 pixels width
+        size: root.size #64, 64 / self.image_ratio
+        color: root.col
+
+<Chair>:
+    canvas:
+        Rectangle:
+            size: root.width/30, root.height/30
+            pos: self.pos
+
+
+<Picture>:
+    on_size: self.center = win.Window.center
+    size: image.size
+    size_hint: None, None
+    Image:
+        id: image
+        source: root.source
+        size: 40, 40 / self.image_ratio
+        canvas.before:
+            Color:
+                rgba: 1,1,1,1
+            BorderImage:
+                source: 'img/shadow32.png'
+                border: (36,36,36,36)
+                size:(self.width+72, self.height+72)
+                pos: (-36,-36)
+
+
+# UTILS ====================================================================
+
+# <ListButton>:
+#     size_hint_y: 0.2
+#     text: 'save links'
+#     on_press: self.save_chairs()
+#     height: '50dp'
+#     width: '100dp'
+
+
+<SaveButton>:
+    size_hint_y: 0.2
+    text: 'save links'
+    on_press: self.save_chairs()
+    height: '50dp'
+    width: '100dp'
+

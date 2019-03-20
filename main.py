@@ -206,12 +206,13 @@ class ChairELT(Scatter):
                 if widget.id == "CHAIR":
                     # print("{} -> {}".format(widget, widget.id))
                     widget.col = [1,1,1,1]
+                if widget.id == "SelectedGuest":
+                    widget.text = self.guestname
             callback_chair_released(self.cid,self.tid,self.guestname,self.pos, self.rot)
             self.col = [1,0,0,1]
             if AdminMode:
                 if touch.button == 'right' :
                     self.rot = (self.rot + 15) % 360 # TODO : filter event touch : prevent bubling
-
         else:
             Clock.schedule_once(lambda dt: self.on_touch_up(touch, True))
             return super(ChairELT, self).on_touch_up(touch)

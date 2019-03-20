@@ -58,8 +58,7 @@ global Tables
 global curdir
 global SelectedChair
 global SelectedTable
-# global SelectedChairLabelInstance
-# global ChairsController
+global SelectedColor
 
 
 curdir = dirname(__file__)
@@ -71,10 +70,9 @@ CSV_invites = join(curdir, CSV_File)
 
 Chaises = []
 Tables = []
-# ChairsController = []
 SelectedChair = "0000"
 SelectedTable = "0000"
-
+SelectedColor = [.9, .25, .8, 1]
 
 
 # CLASSES ========================================================================
@@ -132,7 +130,7 @@ class Mariage(App):
 
         # Selected Chair Label
         # global SelectedChairLabelInstance
-        lab = SelectedChairLabel(id="SelectedGuest",pos=(900, 100), size=(400,100), font_size='50sp')
+        lab = SelectedChairLabel(id="SelectedGuest",pos=(900, 100), size=(400,100), font_size='50sp', color=SelectedColor)
         background.add_widget(lab)
 
 
@@ -150,8 +148,7 @@ class Mariage(App):
         root.add_widget(scl)
 
         return root
-    # def on_pause(self):
-    #     return True
+
 
 
 class Background(Widget):
@@ -209,7 +206,7 @@ class ChairELT(Scatter):
                 if widget.id == "SelectedGuest":
                     widget.text = self.guestname
             callback_chair_released(self.cid,self.tid,self.guestname,self.pos, self.rot)
-            self.col = [1,0,0,1]
+            self.col = SelectedColor
             if AdminMode:
                 if touch.button == 'right' :
                     self.rot = (self.rot + 15) % 360 # TODO : filter event touch : prevent bubling
@@ -240,7 +237,7 @@ class ListButton(Button):
         for widget in self.parent.parent.parent.walk():
             if widget.id == "CHAIR":
                 if widget.cid == self.cid:
-                    widget.col = [1,0,0,1]
+                    widget.col = SelectedColor
                 else:
                     widget.col = [1,1,1,1]
             if widget.id == "SelectedGuest":

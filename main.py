@@ -45,10 +45,13 @@ global AdminMode
 AdminMode = 0
 
 if len(sys.argv) > 1:
-    print("SYS = ", sys.argv[1])
+    print("*****************************  SYS = ", sys.argv[1])
     if str(sys.argv[1]) == "admin":
         AdminMode = 1
+else:
+    print("*** default mode...")
 
+global CSV_File
 global CSV_invites
 global Chaises 
 global Tables
@@ -60,7 +63,8 @@ global SelectedTable
 
 
 curdir = dirname(__file__)
-CSV_invites = join(curdir, 'mariage.csv')
+CSV_File = "mariage.csv"
+CSV_invites = join(curdir, CSV_File)
 
 
 
@@ -128,7 +132,7 @@ class Mariage(App):
 
         # Selected Chair Label
         # global SelectedChairLabelInstance
-        lab = SelectedChairLabel(id="SelectedGuest",pos=(600, 0), size=(200,50), font_size='30sp')
+        lab = SelectedChairLabel(id="SelectedGuest",pos=(900, 100), size=(400,100), font_size='50sp')
         background.add_widget(lab)
 
 
@@ -231,7 +235,7 @@ class ListButton(Button):
     tid = StringProperty(None)
     cid = StringProperty(None)
     def on_press(self):
-        callback_changeSC(self.cid,self.tid)
+        # callback_changeSC(self.cid,self.tid)
         for widget in self.parent.parent.parent.walk():
             if widget.id == "CHAIR":
                 if widget.cid == self.cid:
@@ -303,10 +307,12 @@ def CSVRow(row):
 def callback_saveCSV(*args):
     global Tables
     global Chaises
+    global curdir
     dt = datetime.now().strftime('%Y%m%d_%H%M%S')
     ext = pathlib.PurePosixPath(CSV_invites).suffix
-    basename = os.path.basename(CSV_invites).split('.')[0]
-    backupfile = basename + "_" + dt + ext
+    # basename = os.path.basename(CSV_invites).split('.')[0]
+    backupname = "mariage_" + dt + ext
+    backupfile = os.path.join(curdir, "backups" , backupname )
     copyfile(CSV_invites,backupfile)
     print(CSV_invites, ' archived in ', backupfile)
     tables = []

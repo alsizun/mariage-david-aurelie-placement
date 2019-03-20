@@ -103,10 +103,10 @@ class Mariage(App):
             # tablepic = TablePicture(source=tab["TEX"], tablename=tab["TABLE"], pos=(int(tab["X"]), int(tab["Y"])), rotation=0, do_rotation=False, do_scale=False)
             # tablepic.bind(pos=callback_pos)
             if tab["TYPE"]=="tableronde":
-                tablepic = RoundTable(source=tab["TEX"], tablename=tab["TABLE"], pos=(int(tab["X"]), int(tab["Y"])),size=(int(tab["L"]), int(tab["H"])), on_press=callback_press)
+                tablepic = RoundTable(source=tab["TEX"], tablename="", pos=(int(tab["X"]), int(tab["Y"])),size=(int(tab["L"]), int(tab["H"])), on_press=callback_press)
                 background.add_widget(tablepic)
             if tab["TYPE"]=="table":
-                tablepic = TableButton(source=tab["TEX"], tablename=tab["TABLE"], pos=(int(tab["X"]), int(tab["Y"])),size=(int(tab["L"]), int(tab["H"])), on_press=callback_press)
+                tablepic = TableButton(source=tab["TEX"], tablename="", pos=(int(tab["X"]), int(tab["Y"])),size=(int(tab["L"]), int(tab["H"])), on_press=callback_press)
                 background.add_widget(tablepic)
 
         # global ChairsController

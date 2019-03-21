@@ -46,7 +46,7 @@
     size: (min(self.width,self.height),min(self.width,self.height)) # force circle
     canvas:
         Color:
-            rgba: ((1,1,1,1) if self.state == "normal" else (.5,.5,.5,1))
+            rgba: ((1,1,1,0.1) if self.state == "normal" else (.5,.5,.5,1))
         Ellipse:
             pos: self.pos
             size: self.size
@@ -55,16 +55,19 @@
 
 <TableButton>:
     text: root.tablename
+
+    background_color: 1, 1, 1, 0.1
     # Image:
     #     id: image
     #     source: root.source
 
 
 <ChairELT>:
-    on_size: self.center = win.Window.center
+    # on_size: self.center = win.Window.center
     # size: image.size
     size_hint: None, None
     rotation: root.rot
+    # pos_hint: {'center_x': .5, 'center_y': .5}
 
     Image:
         id: image
@@ -72,6 +75,7 @@
         # create initial image to be 64 pixels width
         size: root.size #64, 64 / self.image_ratio
         color: root.col
+
 
 <Chair>:
     canvas:

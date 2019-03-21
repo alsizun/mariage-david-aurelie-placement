@@ -59,6 +59,7 @@ global curdir
 global SelectedChair
 global SelectedTable
 global SelectedColor
+global ChairDiameter
 
 
 curdir = dirname(__file__)
@@ -73,6 +74,7 @@ Tables = []
 SelectedChair = "0000"
 SelectedTable = "0000"
 SelectedColor = [.9, .25, .8, 1]
+ChairDiameter = 32
 
 
 # CLASSES ========================================================================
@@ -114,9 +116,10 @@ class Mariage(App):
                     posit=(randint(0, 1500),randint(0, 1080))
                 else:
                     posit=(int(cha["X"]), int(cha["Y"]))
-                chairpic = ChairELT(id="CHAIR", source=cha["TEX"], tablename=cha["TABLE"], tid=str(cha["TID"]), cid=str(cha["CID"]), guestname=cha["NOM"], pos=posit, size=(int(cha["L"]), int(cha["H"])), rot=cha["ROT"], do_rotation=False, do_scale=False, do_translation=AdminMode)
+                chairpic = ChairELT(id="CHAIR", source=cha["TEX"], tablename=cha["TABLE"], tid=str(cha["TID"]), cid=str(cha["CID"]), guestname=cha["NOM"], pos=posit, rot=cha["ROT"], do_rotation=False, do_scale=False, do_translation=AdminMode)
                 # ChairsController.append(ChairELT)
                 background.add_widget(chairpic)
+
 
         # Button to save positions
         if AdminMode:
@@ -130,7 +133,7 @@ class Mariage(App):
 
         # Selected Chair Label
         # global SelectedChairLabelInstance
-        lab = SelectedChairLabel(id="SelectedGuest",pos=(900, 100), size=(400,100), font_size='50sp', color=SelectedColor)
+        lab = SelectedChairLabel(id="SelectedGuest",pos=(1000, 100), size=(450,140), font_size='70sp', color=SelectedColor)
         background.add_widget(lab)
 
 
@@ -205,11 +208,15 @@ class ChairELT(Scatter):
                     widget.col = [1,1,1,1]
                 if widget.id == "SelectedGuest":
                     widget.text = self.guestname
-            callback_chair_released(self.cid,self.tid,self.guestname,self.pos, self.rot)
+            print("[",str(self.pos[0]),",",str(self.pos[1]),"] [",str(self.bbox[0][0]),",",str(self.bbox[0][1]),"] rot=",str(self.rot))
+            print("[",str(self.size[0]),",",str(self.size[1]),"] [",str(self.bbox[1][0]),",",str(self.bbox[1][1]),"] rot=",str(self.rot))
+            callback_chair_released(self.cid, self.tid, self.guestname, self.pos, self.rot, self.size, self.bbox)
             self.col = SelectedColor
             if AdminMode:
                 if touch.button == 'right' :
-                    self.rot = (self.rot + 15) % 360 # TODO : filter event touch : prevent bubling
+                    self.rot = (self.rot + 5) % 360 # TODO : filter event touch : prevent bubling
+                if touch.button == 'middle' :
+                    self.rot = (self.rot - 5) % 360 # TODO : filter event touch : prevent bubling
         else:
             Clock.schedule_once(lambda dt: self.on_touch_up(touch, True))
             return super(ChairELT, self).on_touch_up(touch)
@@ -261,11 +268,21 @@ def callback_chair_released(*args):
     x = int(args[3][0])
     y = int(args[3][1])
     r = int(args[4])
-    print("chair ", c ," table ",t ," (",n,") released at [",str(x),",",str(y),"] rot=",str(r))
+    l = int(args[5][0])
+    h = int(args[5][1])
+    bboxX = int(args[6][0][0])
+    bboxY = int(args[6][0][1])
+    bboxL = int(args[6][1][0])
+    bboxH = int(args[6][1][1])
+
+
+    print("chair ", c ," table ",t ," (",n,") released at [",str(x),",",str(y),"] [",str(l),",",str(h),"] rot=",str(r))
     for cha in Chaises:
         if cha["TID"] == t and cha["CID"] == c:
-            cha["X"] = str(x)
-            cha["Y"] = str(y)
+            cha["X"] = str(int(bboxX + (bboxL - l)/2)) #str(x)
+            cha["Y"] = str(int(bboxY + (bboxH - h)/2)) #str(y)
+            cha["L"] = str(l)
+            cha["H"] = str(h)
             cha["ROT"] = str(r)
 
 
@@ -325,6 +342,8 @@ def callback_saveCSV(*args):
         dict_writer.writeheader()
         dict_writer.writerows(furniture)
     fhdl.close()
+    print(CSV_invites, ' saved ')
+
 
 
 def loadCSV():
